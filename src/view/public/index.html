@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html> <head>
+<title></title>
+<style>
+.user {
+position: absolute;
+top: 10px;
+left: 10px;
+width: 20px;
+height: 20px;
+background:blue;
+}
+.user.me {
+background:green;
+}
+
+.bomb {
+position: absolute;
+top: 10px;
+left: 10px;
+width: 20px;
+height: 20px;
+background:black;
+}
+
+
+.fire {
+position: absolute;
+top: 10px;
+left: 10px;
+width: 20px;
+height: 20px;
+background:red;
+}
+</style>
+</head>
+
+<body>
+{% if user == undefined %}
+<a href="{% url controller="public" action="login" %}">Login</a>
+{% else %}
+<a href="{% url controller="public" action="index" %}">{{ user.username }}</a>
+{% endif %}
+
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script src="/static/stats.js"></script>
+<script src="/static/arena.js"></script>
+<script src="/static/user.js"></script>
+<script src="/static/bomb.js"></script>
+<script src="/static/main.js"></script>
+</body> </html>
